@@ -24,3 +24,18 @@ function agregarAmigo() {
     // Actualizar la lista visible
     mostrarLista();
 }
+
+// Función para mostrar la lista de amigos
+function mostrarLista() {
+    const listaHTML = document.getElementById("listaAmigos");
+
+    // Limpiar la lista para evitar duplicados en el DOM
+    listaHTML.innerHTML = "";
+
+    // Crear elementos <li> para cada amigo
+    listaDeAmigos.forEach((amigo, index) => {
+        const listItem = document.createElement("li");
+        listItem.textContent = `${index + 1}. ${amigo}`;
+        listaHTML.appendChild(listItem);
+    });
+}
